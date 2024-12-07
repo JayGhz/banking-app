@@ -349,7 +349,7 @@
 
   .footer_name-mobile {
     @apply flex items-center justify-center rounded-full bg-gray-200;
-    width: 4.5rem; 
+    width: 6rem; 
     height: 2.5rem; 
   }
 
