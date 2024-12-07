@@ -23,6 +23,7 @@ import { authFormSchema } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
+import PlaidLink from './plaid-link';
 
 const AuthForm = ({ type }: { type: string }) => {
   const router = useRouter();
@@ -46,9 +47,22 @@ const AuthForm = ({ type }: { type: string }) => {
 
       try {
         // Sign up with Appwrite & create plaid token
-
+        
         if(type === 'sign-up') {
-          const newUser = await signUp(data);
+          const userData = {
+            firstName: data.firstName!,
+            lastName: data.lastName!,
+            address1: data.address1!,
+            city: data.city!,
+            state: data.state!,
+            postalCode: data.postalCode!,
+            dateOfBirth: data.dateOfBirth!,
+            ssn: data.ssn!,
+            email: data.email,
+            password: data.password
+          }
+
+          const newUser = await signUp(userData);
 
           setUser(newUser);
         }
@@ -100,7 +114,7 @@ const AuthForm = ({ type }: { type: string }) => {
       </header>
       {user ? (
         <div className='flex flex-col gap-4'>
-          {/* PlaidLink */}
+          <PlaidLink user={user} variant='primary' />
         </div>
       ): (
         <>
@@ -110,17 +124,17 @@ const AuthForm = ({ type }: { type: string }) => {
                 <>
                   <div className='flex gap-4'>
                     <CustomInput control={form.control} name='firstName' label='First Name' placeholder='Enter your first name' />
-                    <CustomInput control={form.control} name='lastName' label='Last Name' placeholder='Enter your last name' />
+                    <CustomInput control={form.control} name='lastName' label='Last Name' placeholder='Enter your first name' />
                   </div>
                   <CustomInput control={form.control} name='address1' label='Address' placeholder='Enter your specific address' />
                   <CustomInput control={form.control} name='city' label='City' placeholder='Enter your city' />
                   <div className='flex gap-4'>
-                    <CustomInput control={form.control} name='state' label='State' placeholder='Ex: NY' />
-                    <CustomInput control={form.control} name='postalCode' label='Postal Code' placeholder='Ex: 11101' />
+                    <CustomInput control={form.control} name='state' label='State' placeholder='Example: NY' />
+                    <CustomInput control={form.control} name='postalCode' label='Postal Code' placeholder='Example: 11101' />
                   </div>
                   <div className='flex gap-4'>
                     <CustomInput control={form.control} name='dateOfBirth' label='Date of Birth' placeholder='YYYY-MM-DD' />
-                    <CustomInput control={form.control} name='ssn' label='SSN' placeholder='Ex: 0206' />
+                    <CustomInput control={form.control} name='ssn' label='SSN' placeholder='Example: 1234' />
                   </div>
                 </>
               )}
@@ -146,7 +160,7 @@ const AuthForm = ({ type }: { type: string }) => {
           <footer className='flex justify-center gap-1'>
             <p className='text-14 font-normal text-gray-600'>
               {type === 'sign-in'
-              ? "Don't have an account?"
+              ?  "Don't have an account?"
               : 'Already have an account?'}
             </p>
             <Link href={type === 'sign-in' ? '/sign-up' : '/sign-in'} className='form-link'>
