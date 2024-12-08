@@ -193,7 +193,7 @@
 
   /* My Banks */
   .transactions {
-    @apply flex max-h-screen w-full flex-col gap-8 overflow-y-scroll bg-gray-25 p-8 xl:py-12;
+    @apply flex max-h-screen max-w-[300px] flex-col gap-8 overflow-y-scroll bg-gray-25 p-8 xl:py-12;
   }
 
   .transactions-header {
@@ -266,7 +266,11 @@
   }
 
   .plaidlink-default {
-    @apply flex !justify-start cursor-pointer gap-3 rounded-lg !bg-transparent flex-row;
+    @apply flex !justify-start cursor-pointer gap-3 rounded-lg flex-row shadow-none p-[24px];
+  }
+
+  .plaidlink-default:hover {
+    @apply bg-gray-100;
   }
 
   /* Auth */
