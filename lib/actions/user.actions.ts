@@ -74,6 +74,10 @@ export const signUp = async ({ password, ...userData }: SignUpParams) => {
       type: 'personal'
     })
 
+    if (!dwollaCustomerUrl) {
+      throw new Error('Error creating Dwolla customer')
+    }
+
     if(!dwollaCustomerUrl) throw new Error('Error creating Dwolla customer')
 
     const dwollaCustomerId = extractCustomerIdFromUrl(dwollaCustomerUrl)
@@ -139,7 +143,7 @@ export const createLinkToken = async (user: User) => {
         client_user_id: user.$id
       },
       client_name: `${user.firstName} ${user.lastName}`,
-      products: ['auth'] as Products[],
+      products: ['auth','transactions'] as Products[],
       language: 'en',
       country_codes: ['US'] as CountryCode[],
     }
@@ -249,15 +253,20 @@ export const getBanks = async ({ userId }: getBanksProps) => {
   try {
     const { database } = await createAdminClient()
 
+    if (!DATABASE_ID || !BANK_COLLECTION_ID) {
+      throw new Error('DATABASE_ID or BANK_COLLECTION_ID is not defined')
+    }
+
     const banks = await database.listDocuments(
-      DATABASE_ID!,
-      BANK_COLLECTION_ID!,
+      DATABASE_ID,
+      BANK_COLLECTION_ID,
       [Query.equal('userId', [userId])]
     )
 
     return parseStringify(banks.documents)
   } catch (error) {
     console.error('An error occurred while getting the banks:', error)
+    throw error 
   }
 }
 
