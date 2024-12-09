@@ -64,15 +64,15 @@ export const topCategoryStyles = {
     icon: '/icons/travel.svg',
   },
   Payment: {
-    bg: 'bg-[#f7f0ff]',
-    circleBg: 'bg-purple-300',
+    bg: 'bg-teal-50',
+    circleBg: 'bg-teal-200',
     text: {
-      main: 'text-purple-800',
-      count: 'text-purple-600',
+      main: 'text-teal-700',
+      count: 'text-teal-500',
     },
     progress: {
-      bg: 'bg-purple-300',
-      indicator: 'bg-purple-600',
+      bg: 'bg-teal-200',
+      indicator: 'bg-teal-500',
     },
     icon: '/icons/payment.svg',
   },
@@ -120,16 +120,16 @@ export const topCategoryStyles = {
 export const transactionCategoryStyles = {
   'Food and Drink': {
     borderColor: 'border-pink-600',
-    backgroundColor: 'bg-pink-500',
-    textColor: 'text-pink-700',
+    backgroundColor: 'bg-pink-600',
+    textColor: 'text-pink-600',
     chipBackgroundColor: 'bg-[#fef6fb]',
   },
   Payment: {
-    borderColor: 'border-purple-500',
-    backgroundColor: 'bg-purple-500',
-    textColor: 'text-purple-700',
-    chipBackgroundColor: 'bg-[#f7f0ff]',
-  },
+    borderColor: 'border-[#20b2aa]', 
+    backgroundColor: 'bg-[#20b2aa]',
+    textColor: 'text-[#20b2aa]', 
+    chipBackgroundColor: 'bg-teal-50', 
+},
   'Bank Fees': {
     borderColor: 'border-success-600',
     backgroundColor: 'bg-green-600',
@@ -137,10 +137,10 @@ export const transactionCategoryStyles = {
     chipBackgroundColor: 'bg-inherit',
   },
   Transfer: {
-    borderColor: 'border-orange-500',
-    backgroundColor: 'bg-orange-500',
-    textColor: 'text-orange-500',
-    chipBackgroundColor: 'bg-[#fff8f2]',
+    borderColor: 'border-orange-600',
+    backgroundColor: 'bg-orange-600',
+    textColor: 'text-orange-600',
+    chipBackgroundColor: 'bg-[#FFF8F2]',
   },
   Processing: {
     borderColor: 'border-gray-500',
@@ -157,7 +157,7 @@ export const transactionCategoryStyles = {
   Travel: {
     borderColor: 'border-blue-600',
     backgroundColor: 'bg-blue-600',
-    textColor: 'text-blue-700',
+    textColor: 'text-blue-600',
     chipBackgroundColor: 'bg-[#f5faff]',
   },
   default: {
