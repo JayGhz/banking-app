@@ -141,6 +141,10 @@
     @apply text-14 rounded-lg border border-gray-300 px-4 py-2.5 font-semibold text-gray-700;
   }
 
+  .view-all-btn:hover {
+    @apply bg-gray-100;
+  }
+
   .recent-transactions {
     @apply flex w-full flex-col gap-6;
   }
@@ -159,7 +163,7 @@
   }
 
   .profile-banner {
-    @apply h-[120px] w-full bg-gradient-mesh bg-cover bg-no-repeat;
+    @apply h-[85px] w-full bg-gradient-mesh bg-cover bg-no-repeat;
   }
 
   .profile {
@@ -193,7 +197,7 @@
 
   /* My Banks */
   .transactions {
-    @apply flex max-h-screen max-w-[300px] flex-col gap-8 overflow-y-scroll bg-gray-25 p-8 xl:py-12;
+    @apply flex max-h-screen flex-col gap-8 overflow-y-scroll bg-gray-25 p-8 xl:py-12;
   }
 
   .transactions-header {
@@ -235,7 +239,7 @@
 
   /* Bank Info */
   .bank-info {
-    @apply gap-[18px] flex p-4 transition-all border bg-blue-25 border-transparent;
+    @apply gap-[18px] flex p-4 transition-all border bg-[#f5faff] border-transparent rounded-lg;
   }
 
   /* Category Badge */
@@ -266,8 +270,8 @@
   }
 
   .plaidlink-default {
-    @apply flex !justify-start cursor-pointer gap-3 rounded-lg flex-row shadow-none p-[24px];
-  }
+    @apply flex gap-3 items-center md:py-6 md:pr-6 md:pl-3 rounded-lg justify-center xl:justify-start shadow-none;
+  }  
 
   .plaidlink-default:hover {
     @apply bg-gray-100;
@@ -340,7 +344,7 @@
 
   /* Footer */
   .footer {
-    @apply flex cursor-pointer items-center justify-between gap-2 py-6;
+    @apply flex items-center justify-between gap-2 py-6;
   }
 
   .footer_name {
@@ -362,11 +366,11 @@
   }
 
   .footer_image {
-    @apply relative size-5 max-xl:w-full max-xl:flex max-xl:justify-center max-xl:items-center;
+    @apply relative size-5 max-xl:w-full max-xl:flex max-xl:justify-center max-xl:items-center cursor-pointer left-[8px];
   }
 
   .footer_image-mobile {
-    @apply relative size-5;
+    @apply relative size-5 cursor-pointer;
   }
 
   /* Sidebar */
@@ -382,7 +386,12 @@
     @apply flex gap-3 items-center py-1 md:p-3 2xl:p-4 rounded-lg justify-center xl:justify-start;
   }
 
+  .sidebar-link:hover {
+    @apply bg-gray-100;
+  }
+
   .sidebar-label {
     @apply text-16 font-semibold text-black-2 max-xl:hidden;
   }
+
 }
