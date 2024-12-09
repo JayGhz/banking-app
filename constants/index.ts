@@ -50,31 +50,57 @@ export const ITEMS = [
 ];
 
 export const topCategoryStyles = {
-  'Food and Drink': {
+  Travel: {
     bg: 'bg-blue-25',
-    circleBg: 'bg-blue-100',
+    circleBg: 'bg-blue-200',
     text: {
       main: 'text-blue-900',
       count: 'text-blue-700',
     },
     progress: {
-      bg: 'bg-blue-100',
+      bg: 'bg-blue-200',
       indicator: 'bg-blue-700',
     },
-    icon: '/icons/monitor.svg',
+    icon: '/icons/travel.svg',
   },
-  Travel: {
-    bg: 'bg-success-25',
-    circleBg: 'bg-success-100',
+  Payment: {
+    bg: 'bg-[#f7f0ff]',
+    circleBg: 'bg-purple-300',
     text: {
-      main: 'text-success-900',
-      count: 'text-success-700',
+      main: 'text-purple-800',
+      count: 'text-purple-600',
     },
     progress: {
-      bg: 'bg-success-100',
-      indicator: 'bg-success-700',
+      bg: 'bg-purple-300',
+      indicator: 'bg-purple-600',
     },
-    icon: '/icons/coins.svg',
+    icon: '/icons/payment.svg',
+  },
+  'Food and Drink': {
+    bg: 'bg-pink-25',
+    circleBg: 'bg-pink-200',
+    text: {
+      main: 'text-pink-900',
+      count: 'text-pink-700',
+    },
+    progress: {
+      bg: 'bg-pink-200',
+      indicator: 'bg-pink-700',
+    },
+    icon: '/icons/food.svg',
+  }, 
+  Transfer: {
+    bg: 'bg-[#FFF8F2]',
+    circleBg: 'bg-orange-100',
+    text: {
+      main: 'text-orange-900',
+      count: 'text-orange-700',
+    },
+    progress: {
+      bg: 'bg-orange-100',
+      indicator: 'bg-orange-700',
+    },
+    icon: '/icons/transfer.svg',
   },
   default: {
     bg: 'bg-pink-25',
@@ -96,13 +122,13 @@ export const transactionCategoryStyles = {
     borderColor: 'border-pink-600',
     backgroundColor: 'bg-pink-500',
     textColor: 'text-pink-700',
-    chipBackgroundColor: 'bg-inherit',
+    chipBackgroundColor: 'bg-[#fef6fb]',
   },
   Payment: {
-    borderColor: 'border-success-600',
-    backgroundColor: 'bg-green-600',
-    textColor: 'text-success-700',
-    chipBackgroundColor: 'bg-inherit',
+    borderColor: 'border-purple-500',
+    backgroundColor: 'bg-purple-500',
+    textColor: 'text-purple-700',
+    chipBackgroundColor: 'bg-[#f7f0ff]',
   },
   'Bank Fees': {
     borderColor: 'border-success-600',
@@ -111,13 +137,13 @@ export const transactionCategoryStyles = {
     chipBackgroundColor: 'bg-inherit',
   },
   Transfer: {
-    borderColor: 'border-red-700',
-    backgroundColor: 'bg-red-700',
-    textColor: 'text-red-700',
-    chipBackgroundColor: 'bg-inherit',
+    borderColor: 'border-orange-500',
+    backgroundColor: 'bg-orange-500',
+    textColor: 'text-orange-500',
+    chipBackgroundColor: 'bg-[#fff8f2]',
   },
   Processing: {
-    borderColor: 'border-[#F2F4F7]',
+    borderColor: 'border-gray-500',
     backgroundColor: 'bg-gray-500',
     textColor: 'text-[#344054]',
     chipBackgroundColor: 'bg-[#F2F4F7]',
@@ -132,7 +158,7 @@ export const transactionCategoryStyles = {
     borderColor: 'border-blue-600',
     backgroundColor: 'bg-blue-600',
     textColor: 'text-blue-700',
-    chipBackgroundColor: 'bg-inherit',
+    chipBackgroundColor: 'bg-[#f5faff]',
   },
   default: {
     borderColor: '',
