@@ -37,9 +37,9 @@ const MobileNav = ({ user }: MobileNavProps) => {
               src='/icons/logo.svg'
               width={34}
               height={34}
-              alt='Nerdy logo'
+              alt='CashKai logo'
             />
-            <h1 className='text-26 font-ibm-plex-serif font-bold text-black-1'>Nerdy</h1>
+            <h1 className='text-26 font-ibm-plex-serif font-bold text-black-1'>CashKai</h1>
           </Link>
           <div className='mobilenav-sheet'>
             <SheetClose asChild>
